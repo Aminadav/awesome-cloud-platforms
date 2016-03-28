@@ -1,3 +1,7 @@
+<!-- Testing
+	http://127.0.0.100/cloud.online/index.html
+	http://cloud.nginx.bua.co.il/
+-->
 <html>
 <head>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
@@ -7,6 +11,11 @@
 <link rel=stylesheet href=style.css>
 </head>
 <body ng-app="app">
+	List of all compute engine for develop purpose
+	<span ng-repeat="item in ['compute','Game Development','Databases']">
+		<a class=filter href="#">{{item}}</a>
+		<span ng-if="!$last"> |
+	</span>
 	<div ng-repeat="item in data.list">		
 		<div ng-include="'item.html'"></div>
 	</div>	
