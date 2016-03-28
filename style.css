@@ -1,0 +1,32 @@
+.item{
+	margin:10px;
+	padding:10px;
+	border: 4px solid #88888E;
+	border-radius: 10px;
+	background-color: #DCD5D5;
+}
+.category{
+	color: green;
+	display: inline-block;
+	font-style: italic;
+}
+.name {
+	display: inline-block;
+	font-size: 40px;
+}
+.link a{
+	color: rgba(5, 0, 128, 0.83);
+}
+.source{
+	display: inline-block;
+	font-size: 40px;
+}
+.title{
+	display:block;
+	font-weight: bolder;
+}
+.description{
+	display:block;
+	color: #3C3434;
+	margin: 20px;
+}

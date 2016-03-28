@@ -1,0 +1,16 @@
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="script.js"></script>
+<link rel=stylesheet href=style.css>
+</head>
+<body ng-app="app">
+	<div ng-repeat="item in data.list">		
+		<div ng-include="'item.html'"></div>
+	</div>	
+	Collected by Aminadav Glickshtein<br>
+	All the data in this table taken directly from the owner website<br>
+</body>
+</html>
