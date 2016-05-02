@@ -21,6 +21,12 @@ app.run(function($rootScope,$http){
 		})
 		$rootScope.categories=_.toArray(obj)
 		$rootScope.categories=_.reverse(_.sortBy($rootScope.categories,'count'))
+
+		$rootScope.data.list=_.sortBy($rootScope.data.list,function(i){
+			if (i[4] && i[0].match(/google/i)) return 0
+			if (i[4] ) return 10
+			return 100
+		})
 		// $rootScope.categories=_.map(uniqued,'[1]')
 	})
 	function spliter(data){
