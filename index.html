@@ -1,25 +1,232 @@
-<!-- Testing
-	http://127.0.0.100/cloud.online/index.html
-	http://cloud.nginx.bua.co.il/
--->
+<!DOCTYPE HTML>
+
 <html>
-<head>
-<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-<script src="script.js"></script>
-<link rel=stylesheet href=style.css>
-</head>
-<body ng-app="app">
-	List of all compute engine for develop purpose
-	<span ng-repeat="item in ['compute','Game Development','Databases']">
-		<a class=filter href="#">{{item}}</a>
-		<span ng-if="!$last"> |
-	</span>
-	<div ng-repeat="item in data.list">		
-		<div ng-include="'item.html'"></div>
-	</div>	
-	Collected by Aminadav Glickshtein<br>
-	All the data in this table taken directly from the owner website<br>
-</body>
+	<head>
+		<title>GoCloud Cards</title>
+		<meta charset="utf-8" />
+		
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen, projection" />
+
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/jquery.parallax.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.2/lodash.min.js"></script>
+  <script src="script.js"></script>
+
+
+      <script type='text/javascript' src='assets/js/filter.js'></script>
+      <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+    <style type='text/css'>
+      #flavor-nav a:hover {
+        
+        border-bottom:2px solid #A3A4A3;
+        
+      }
+      
+      
+      #flavor-nav a {
+        color: #A3A4A3;
+       
+        
+      }
+      #flavor-nav a.act {
+	  border-bottom:2px solid #2BA1C6;
+        color: #A3A4A3;
+      }
+    </style>
+      
+	</head>
+	<body class="index" ng-app="app">
+		<div id="page-wrapper">
+          <div style="width:100%; height:60px; background:#fff; padding:10px;"><h4 style="color:#2BA1C6;">Gocloud.<span style="color:#A3A4A3;">cards</span></h4></div>
+			<!-- Header -->
+				<header id="header" class="alt">
+					
+					<!--<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Welcome</a></li>
+							<li class="submenu">
+								<a href="#">Layouts</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li class="submenu">
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Dolore Sed</a></li>
+											<li><a href="#">Consequat</a></li>
+											<li><a href="#">Lorem Magna</a></li>
+											<li><a href="#">Sed Magna</a></li>
+											<li><a href="#">Ipsum Nisl</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button special">Sign Up</a></li>
+						</ul>
+					</nav>-->
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+                      <h1 style="text-align:left;">How to choose
+						<br />
+                        a Cloud Platform?</h1>
+				
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				
+
+					<div id="page-wrap">
+							
+		<br />
+		
+        <div id="flavor-nav">
+            <a ng-repeat="item in categories" rel="{{item.name}}" ng-click="data.current=item.name" ng-class="{current:data.current==item.name}" ng-show="$index<5 || showmore">
+            <span class="white-space:nowrap">{{item.name.toUpperCase()}} ({{item.count}})</span>
+            </a> 
+            <button class="btn btn-link" ng-click="showmore=true" ng-show="!showmore">SHOW MORE...</button>
+        </div>
+        <br />
+        
+        <style>
+        .myimage{
+              width: 350px;
+              float: left;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: top;
+              margin-right:42px;
+          }
+          </style>
+        <div id="all-flavors">
+        <a href="https://github.com/AminaG/gocloud.cards/fork"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+        
+        <div ng-repeat="item in data.list" class="flavor all " ng-show="item[1]==data.current || !data.current">   
+        <div style="background-image:url({{item[4]}})" class=myimage style="    float: left;margin: 0 40px 0 0;"alt="" ng-style="{height:item[4] ? 300 : 100}"/></div>
+        <p class="scc" style="color: #ff0000;">{{item[1]}}</p>
+        <br>
+          <h4>{{item[0]}} {{item[2]}} - {{item[5]}}</h4>
+            <p style="display:table-cell">{{item[6]}}</p>
+        </div>
+        
+       <div class="flavor all Com" style=display:none>
+        <img src="images/one_page.jpg" alt="" />
+         <table id="min"><tr><td class="nam"><p class="scc" style="color: #ff0000;">Compute</p></td><td class="nam1"><p class="ssc" site="fb"><img style="width:20%; float:left;" src="images/one_f.png" /></p></td><td class="nam1"><p class="ssc" site="tw"><img style="width:40%; float:left;" src="images/one_t.png" /></p></td></tr></table>
+          <h4>Sweet Curry With Saffron</h4>
+        <p>Lusciously mellow with notes of overripe berries, 55% Hawaiian dark chocolate meets its soulmate in sweet curry - awash in spices including coriander, tumeric, cumin and cardamom and sprinkled with rare saffron. This spicy melange is slowly steeped in fresh coconut puree and gently blended with the chocolate. The taste rushes over you in waves - fragrant curry, chased by coconut, then the lingering, raisiny sweetness of chocolate.</p>
+        </div>
+		<div class="flavor all Lea" style=display:none>
+        <img src="images/one_page.jpg" alt="" />
+          <table id="min"><tr><td class="nam"><p class="scc" style="color: #ff0000;">Learning</p></td><td class="nam1"><p class="ssc" site="fb"><img style="width:20%; float:left;" src="images/one_f.png" /></p></td><td class="nam1"><p class="ssc" site="tw"><img style="width:40%; float:left;" src="images/one_t.png" /></p></td></tr></table>
+          <h4>Sweet Curry With Saffron</h4>
+        <p>Lusciously mellow with notes of overripe berries, 55% Hawaiian dark chocolate meets its soulmate in sweet curry - awash in spices including coriander, tumeric, cumin and cardamom and sprinkled with rare saffron. This spicy melange is slowly steeped in fresh coconut puree and gently blended with the chocolate. The taste rushes over you in waves - fragrant curry, chased by coconut, then the lingering, raisiny sweetness of chocolate.</p>
+        </div>
+                  </div>
+          <hr><hr>
+          <div class=footer>
+              Collected by Aminadav Glickshtein<br>
+              All the data in this table taken directly from the owner website<br>
+          </div>
+          <style>
+          .footer{
+            bottom:0px;left:0px;width:100%;
+            position: fixed;
+            padding: 20px 20px 50px 20px;
+            background: #3F3F4B;
+            border-top: 1px solid gray;
+            color: white;
+          }
+    </style>
+
+                      </script>
+		<!-- Scripts -->
+          <script>
+            //Load jquery before
+$.fn.ssc = function(url){
+    return this.each(function(){
+        var $this = $(this);
+        var site = $this.attr('site');
+        var api_url;
+        var count_container;
+        
+        if(site == 'fb'){
+            api_url = 'http://graph.facebook.com/?id=' + url;
+            count_container = 'shares';
+        }
+        else if(site == 'tw'){
+            api_url = 'http://cdn.api.twitter.com/1/urls/count.json?url=' + url;
+            count_container = 'count';
+        }
+        else if(site == 'li'){
+            api_url = 'http://www.linkedin.com/countserv/count/share?url=' + url;
+            count_container = 'count';
+        }
+        else{
+             console.log('This site is not valid.');
+        }
+        
+        //Get counts
+        $.ajax({
+            url : api_url,
+            dataType: "jsonp",
+            type : 'GET',
+            success : function(data){
+                $this.find('.count').text(data[count_container]);
+            }
+        });
+        
+        //Open Popup
+        var left = (screen.width / 2) - (600 / 2);
+        var top = (screen.height / 2) - (350 / 2);
+        var share_url;
+        $this.click(function (){
+            if (site == 'fb'){
+                shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+            } else if (site == 'tw'){
+                shareUrl = 'https://twitter.com/home?status=' + url;
+            } else if (site == 'li'){
+                shareUrl = 'https://www.linkedin.com/shareArticle?url=' + url;
+            }
+
+            window.open(shareUrl, 'FrameInn Share', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + 600 + ', height=' + 350 + ', top=' + top + ', left=' + left);
+        });
+    });
+};
+
+$('.ssc').ssc('https://vk.com/id239445860');
+          </script>
+          
+          
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
