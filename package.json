@@ -1,0 +1,19 @@
+{
+  "name": "cloud.online",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "deploy": "gcloud config set account AminadavG@gmail.com & gsutil cp -r -a public-read *.* gs://gocloud.cards"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AminaG/cloud.online.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AminaG/cloud.online/issues"
+  },
+  "homepage": "https://github.com/AminaG/cloud.online#readme"
+}
